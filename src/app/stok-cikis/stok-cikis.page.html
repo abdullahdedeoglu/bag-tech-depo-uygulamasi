@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Depo Çıkış Kontrol</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <!-- Kullanıcı Bilgisi -->
+  <ion-card class="user-card">
+    <ion-card-content>
+      <div class="user-info">
+        <ion-icon name="person-circle-outline" color="primary"></ion-icon>
+        <div>
+          <p class="user-label">Aktif Kullanıcı</p>
+          <h3>{{ currentUsername }}</h3>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Stok Çıkış Formu -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Stok Çıkış Formu</ion-card-title>
+      <ion-card-subtitle>Lütfen tüm alanları doldurun</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      
+      <!-- Ürün Kodu -->
+      <ion-item>
+        <ion-input
+          label="Ürün Kodu *"
+          label-placement="stacked"
+          [(ngModel)]="urunKodu"
+          type="text"
+          placeholder="Örn: PRD-001">
+        </ion-input>
+      </ion-item>
+
+      <!-- Miktar -->
+      <ion-item>
+        <ion-input
+          label="Miktar *"
+          label-placement="stacked"
+          [(ngModel)]="miktar"
+          type="number"
+          min="1"
+          placeholder="Pozitif bir sayı girin">
+        </ion-input>
+      </ion-item>
+
+      <!-- Birim Seçimi -->
+      <div class="form-section">
+        <ion-label class="section-label">Birim Seçimi *</ion-label>
+        <ion-radio-group [(ngModel)]="birim">
+          <ion-item lines="none">
+            <ion-radio slot="start" value="KG"></ion-radio>
+            <ion-label>Kilogram (KG)</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-radio slot="start" value="ADET"></ion-radio>
+            <ion-label>Adet</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </div>
+
+      <!-- Çıkış Lokasyonu -->
+      <ion-item>
+        <ion-select
+          label="Çıkış Lokasyonu *"
+          label-placement="stacked"
+          [(ngModel)]="cikisLokasyonu"
+          placeholder="Seçiniz"
+          interface="action-sheet">
+          <ion-select-option *ngFor="let lokasyon of lokasyonlar" [value]="lokasyon">
+            {{ lokasyon }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Butonlar -->
+      <div class="button-group">
+        <ion-button 
+          expand="block" 
+          (click)="onKaydet()"
+          color="success">
+          <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+          İşlemi Kaydet
+        </ion-button>
+
+        <ion-button 
+          expand="block" 
+          fill="outline"
+          (click)="resetForm()"
+          color="medium">
+          <ion-icon slot="start" name="refresh-outline"></ion-icon>
+          Formu Temizle
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Bilgilendirme -->
+  <ion-card class="info-card">
+    <ion-card-content>
+      <ion-icon name="information-circle-outline" color="primary"></ion-icon>
+      <p>Kaydettiğiniz veriler tarayıcı konsolunda görüntülenecektir.</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
