@@ -1,0 +1,7 @@
+{
+  "name": "depo-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
