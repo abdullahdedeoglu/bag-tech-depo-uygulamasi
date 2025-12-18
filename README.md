@@ -111,7 +111,7 @@ src/
 ## 📸 Ekran Görüntüleri
 
 ### Giriş Sayfası
-<img width="1862" height="885" alt="image" src="https://github.com/user-attachments/assets/02cc8d65-4f80-4579-bd3f-894e78b0f182" />
+<img width="1862" height="883" alt="image" src="https://github.com/user-attachments/assets/3ca53932-309e-4e12-ae02-84d4de1a1210" />
 
 
 ### Stok Çıkış Sayfası
