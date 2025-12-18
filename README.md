@@ -115,7 +115,8 @@ src/
 
 
 ### Stok Çıkış Sayfası
-<img width="1852" height="890" alt="image" src="https://github.com/user-attachments/assets/afeac473-d7d0-4032-a421-fed1e8acdb4f" />
+<img width="1861" height="882" alt="image" src="https://github.com/user-attachments/assets/4f151cf9-4b4e-458c-9bc2-9546e09d5c54" />
+
 
 ## 👨‍💻 Geliştirici
 
