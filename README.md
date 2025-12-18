@@ -111,14 +111,15 @@ src/
 ## 📸 Ekran Görüntüleri
 
 ### Giriş Sayfası
-![Giriş Sayfası](screenshots/login.png)
+<img width="1862" height="885" alt="image" src="https://github.com/user-attachments/assets/02cc8d65-4f80-4579-bd3f-894e78b0f182" />
+
 
 ### Stok Çıkış Sayfası
-![Stok Çıkış](screenshots/stok-cikis.png)
+<img width="1852" height="890" alt="image" src="https://github.com/user-attachments/assets/afeac473-d7d0-4032-a421-fed1e8acdb4f" />
 
 ## 👨‍💻 Geliştirici
 
-[Adınız Soyadınız]
+Abdullah Dedeoğlu
 
 ## 📄 Lisans
 
