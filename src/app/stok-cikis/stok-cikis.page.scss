@@ -1,86 +1,570 @@
-.user-card {
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--ion-color-primary) 0%, var(--ion-color-primary-shade) 100%);
-  color: white;
+// ============================================
+// STOK ÇIKIŞ SAYFASI - MODERN KURUMSAL TASARIM
+// ============================================
 
-  .user-info {
+// Ana Content Alanı
+.stok-content {
+  --background: #f4f5f8;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// ============================================
+// HEADER - Gradient Toolbar
+// ============================================
+.gradient-toolbar {
+  --background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  --color: #ffffff;
+  
+  .toolbar-title {
     display: flex;
     align-items: center;
-    gap: 15px;
-
-    ion-icon {
-      font-size: 48px;
-      color: white;
-    }
-
-    .user-label {
-      margin: 0;
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
-    h3 {
-      margin: 5px 0 0 0;
-      font-size: 20px;
-      font-weight: bold;
-    }
-  }
-}
-
-ion-card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-ion-item {
-  --padding-start: 0;
-  margin-bottom: 15px;
-}
-
-.form-section {
-  margin: 20px 0;
-
-  .section-label {
-    display: block;
-    margin-bottom: 10px;
+    gap: 8px;
     font-weight: 600;
-    color: var(--ion-color-medium);
-  }
-
-  ion-item {
-    margin-bottom: 5px;
-  }
-}
-
-.button-group {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  ion-button {
-    height: 48px;
-    font-weight: 600;
-  }
-}
-
-.info-card {
-  margin-top: 20px;
-  background-color: var(--ion-color-light);
-
-  ion-card-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
+    font-size: 18px;
+    
     ion-icon {
       font-size: 24px;
-      flex-shrink: 0;
     }
+  }
+}
 
-    p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--ion-color-medium);
+.logout-button {
+  --color: #ffffff;
+  --background-hover: rgba(255, 255, 255, 0.1);
+  --border-radius: 8px;
+  font-size: 24px;
+}
+
+// ============================================
+// AKTİF KULLANICI BADGE (ÜST ALAN)
+// ============================================
+.user-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+  animation: slideInDown 0.5s ease-out;
+}
+
+.user-badge-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-avatar {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  
+  ion-icon {
+    font-size: 28px;
+    color: #ffffff;
+  }
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.user-name {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  
+  span {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+// ============================================
+// FORM KARTI
+// ============================================
+.form-card {
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin: 0 0 24px 0;
+  background: #ffffff;
+  overflow: hidden;
+  animation: slideInUp 0.5s ease-out;
+}
+
+.form-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 24px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  
+  ion-icon {
+    font-size: 28px;
+    color: #ffffff;
+  }
+}
+
+.header-text {
+  flex: 1;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.form-content {
+  padding: 32px 24px;
+}
+
+// ============================================
+// INPUT GRUPLARI VE ETİKETLER
+// ============================================
+.input-group {
+  margin-bottom: 28px;
+  
+  &:last-of-type {
+    margin-bottom: 32px;
+  }
+}
+
+// Başlık Etiketi (Input Üstü)
+.input-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #334155; // Koyu lacivert
+  margin-bottom: 8px;
+  margin-left: 4px; // Hafif girinti
+}
+
+// Modern Input Stilleri
+.modern-input, .modern-select {
+  --border-radius: 12px;
+  --border-width: 2px;
+  --border-color: #e2e8f0;
+  --highlight-color-focused: #667eea;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  font-size: 15px;
+  
+  // İçerideki ikon stili
+  ion-icon {
+    color: #667eea; // Tema rengi
+    margin-right: 12px;
+    font-size: 20px;
+  }
+
+  &::part(native) {
+    font-weight: 500;
+  }
+}
+
+// Input Yardımcı Metni
+.input-helper {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 8px 0 0 4px;
+  font-style: italic;
+}
+
+// ============================================
+// RADYO BUTON GRUPLARI
+// ============================================
+.radio-group-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+  }
+  
+  ion-radio {
+    margin: 0;
+  }
+}
+
+.modern-radio {
+  --color-checked: #667eea;
+  --border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+  
+  ion-icon {
+    font-size: 20px;
+    color: #667eea;
+  }
+}
+
+// Seçili Radyo Butonu Stili
+ion-radio.radio-checked ~ .radio-label {
+  font-weight: 600;
+  color: #667eea;
+}
+
+// ============================================
+// BUTON GRUBU
+// ============================================
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.primary-button {
+  --background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --background-hover: linear-gradient(135deg, #059669 0%, #047857 100%);
+  --box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+  --border-radius: 12px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  
+  ion-icon {
+    font-size: 24px;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+}
+
+.secondary-button {
+  --border-width: 2px;
+  --border-color: #e2e8f0;
+  --color: #64748b;
+  --border-radius: 12px;
+  height: 52px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: none;
+  
+  ion-icon {
+    font-size: 22px;
+  }
+  
+  &:hover {
+    --background: #f8fafc;
+    --border-color: #cbd5e1;
+  }
+}
+
+// ============================================
+// BİLGİLENDİRME BANNER
+// ============================================
+.info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 2px solid #fbbf24;
+  animation: slideInUp 0.6s ease-out;
+}
+
+.info-banner-icon {
+  font-size: 26px;
+  color: #d97706;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-banner-text {
+  flex: 1;
+  font-size: 14px;
+  color: #78350f;
+  line-height: 1.6;
+  
+  strong {
+    font-weight: 700;
+    color: #92400e;
+  }
+}
+
+// ============================================
+// ANIMASYONLAR
+// ============================================
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+// ============================================
+// RESPONSİVE TASARIM
+// ============================================
+@media (max-width: 576px) {
+  .content-wrapper {
+    padding: 16px;
+  }
+  
+  .user-badge {
+    padding: 16px;
+  }
+  
+  .user-badge-content {
+    flex-wrap: wrap;
+  }
+  
+  .user-avatar {
+    width: 48px;
+    height: 48px;
+    
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+  
+  .user-name {
+    font-size: 18px;
+  }
+  
+  .status-indicator {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .form-header {
+    padding: 20px;
+  }
+  
+  .header-icon {
+    width: 48px;
+    height: 48px;
+    
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+  
+  .form-title {
+    font-size: 20px;
+  }
+  
+  .form-content {
+    padding: 24px 20px;
+  }
+  
+  .primary-button {
+    height: 52px;
+  }
+  
+  .secondary-button {
+    height: 48px;
+  }
+}
+
+// Tablet
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding: 32px 24px;
+  }
+  
+  .user-badge {
+    padding: 24px 28px;
+  }
+  
+  .form-content {
+    padding: 40px 32px;
+  }
+}
+
+// Desktop
+@media (min-width: 992px) {
+  .content-wrapper {
+    padding: 40px 32px;
+  }
+  
+  .radio-group-modern {
+    flex-direction: row;
+  }
+  
+  .radio-option {
+    flex: 1;
+  }
+  
+  .button-group {
+    flex-direction: row;
+    
+    ion-button {
+      flex: 1;
+    }
+  }
+}
+
+// ============================================
+// DROPDOWN (POPOVER) MENÜ - %100 BEYAZ FIX
+// ============================================
+::ng-deep ion-popover {
+  --width: 320px;           // Genişlik
+  --background: #ffffff !important; // Popover ana zeminini beyaz yap
+  --box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  --backdrop-opacity: 0.1;
+
+  // Popover'ın içindeki asıl kutu (Content)
+  .popover-content {
+    background: #ffffff !important;
+    --background: #ffffff !important;
+    border-radius: 16px !important;
+    border: 1px solid #e2e8f0;
+  }
+
+  // Siyah görünen asıl suçlu bu: Liste yapısı
+  ion-list {
+    background: #ffffff !important;
+    padding: 6px !important;
+  }
+
+  // Seçenek satırları
+  ion-item {
+    --background: #ffffff !important; // Satır arkası beyaz
+    --color: #334155 !important;      // Yazı rengi koyu gri (okunaklı)
+    --min-height: 50px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    
+    // Satırların altındaki çizgiyi kaldır
+    --border-width: 0; 
+    --inner-border-width: 0;
+
+    // Hover (Üzerine gelince) Efekti
+    &:hover {
+      --background: #f1f5f9 !important; // Çok açık gri
+      --color: #667eea !important;      // Tema rengi (Mor/Mavi)
+      
+      ion-label {
+        color: #667eea !important;
+      }
+    }
+    
+    // Seçili olan eleman
+    &.item-radio-checked {
+      --background: #eff6ff !important;
+      --color: #667eea !important;
     }
   }
 }

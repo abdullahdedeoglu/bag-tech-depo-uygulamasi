@@ -1,60 +1,347 @@
-.login-container {
+// ============================================
+// LOGIN SAYFASI - MODERN KURUMSAL TASARIM
+// ============================================
+
+// Ana Content Alanı
+.login-content {
+  --background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+}
+
+// Tüm Sayfayı Sarmalayan Container
+.login-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 80vh;
-  max-width: 500px;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
+// ============================================
+// HEADER - Gradient Toolbar
+// ============================================
+.gradient-toolbar {
+  --background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  --color: #ffffff;
+  
+  .toolbar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+}
+
+// ============================================
+// LOGO VE HOŞ GELDİNİZ ALANI
+// ============================================
 .login-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
+  animation: fadeInDown 0.6s ease-out;
+}
 
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.logo-icon {
+  font-size: 48px;
+  color: #ffffff;
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 16px 0 8px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcome-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+// ============================================
+// GİRİŞ FORMU KARTI
+// ============================================
+.login-card {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  margin: 0;
+  background: #ffffff;
+  animation: fadeInUp 0.6s ease-out;
+  overflow: hidden;
+}
+
+.login-card-content {
+  padding: 32px 24px;
+}
+
+// ============================================
+// INPUT ALANLARI
+// ============================================
+.input-wrapper {
+  margin-bottom: 24px;
+  
+  &:last-of-type {
+    margin-bottom: 32px;
+  }
+}
+
+.modern-input {
+  --border-radius: 12px;
+  --border-width: 2px;
+  --border-color: #e2e8f0;
+  --highlight-color-focused: #667eea;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  font-size: 16px;
+  
+  &::part(native) {
+    font-weight: 500;
+  }
+  
   ion-icon {
-    font-size: 80px;
-    margin-bottom: 10px;
+    color: #667eea;
+    font-size: 20px;
+    margin-right: 8px;
   }
+}
 
-  h1 {
-    font-size: 28px;
-    margin: 10px 0;
-    color: var(--ion-color-primary);
+// Input Label Stilleri
+ion-input {
+  --placeholder-opacity: 0.6;
+  --placeholder-color: #94a3b8;
+  
+  &[label] {
+    ion-label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 8px;
+    }
   }
+}
 
+// ============================================
+// GİRİŞ BUTONU
+// ============================================
+.login-button {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-hover: linear-gradient(135deg, #5568d3 0%, #66398a 100%);
+  --background-activated: linear-gradient(135deg, #4a56bc 0%, #553175 100%);
+  --box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+  --border-radius: 12px;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  
+  ion-icon {
+    font-size: 22px;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// TEST KULLANICILARI BİLGİ NOTU
+// ============================================
+.info-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 24px;
+  border: 2px solid #e0e7ff;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.info-icon {
+  font-size: 24px;
+  color: #667eea;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-text {
+  flex: 1;
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  margin: 0 0 12px 0;
+}
+
+.user-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+  
+  ion-icon {
+    font-size: 16px;
+  }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+.login-footer {
+  margin-top: 32px;
+  text-align: center;
+  
   p {
-    color: var(--ion-color-medium);
+    font-size: 12px;
+    color: #94a3b8;
     margin: 0;
   }
 }
 
-ion-card {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-ion-item {
-  --padding-start: 0;
-  margin-bottom: 15px;
-}
-
-.login-button {
-  margin-top: 20px;
-  height: 48px;
-  font-weight: 600;
-}
-
-.info-box {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: var(--ion-color-light);
-  border-radius: 8px;
-  font-size: 13px;
-
-  p {
-    margin: 5px 0;
+// ============================================
+// ANIMASYONLAR
+// ============================================
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-
-  strong {
-    color: var(--ion-color-primary);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+// ============================================
+// RESPONSİVE TASARIM
+// ============================================
+@media (max-width: 576px) {
+  .login-wrapper {
+    padding: 16px;
+  }
+  
+  .logo-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .logo-icon {
+    font-size: 40px;
+  }
+  
+  .welcome-title {
+    font-size: 28px;
+  }
+  
+  .login-card-content {
+    padding: 24px 20px;
+  }
+  
+  .login-button {
+    height: 52px;
+  }
+}
+
+// Tablet ve üzeri
+@media (min-width: 768px) {
+  .login-wrapper {
+    padding: 40px;
+  }
+}
+
+// ============================================
+// INPUT AYARLARI
+// ============================================
+ion-input.modern-input {
+    // Placeholder rengini netleştir
+    --placeholder-opacity: 1;
+    --placeholder-color: #94a3b8;
+    
+    // İkon rengi
+    ion-icon {
+        color: #667eea; 
+        margin-right: 8px; 
+    }
 }

@@ -1,55 +1,94 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
-    <ion-title>BAG Tech Depo</ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="gradient-toolbar">
+    <ion-title class="toolbar-title">
+      <ion-icon name="business-outline"></ion-icon>
+      BAG Tech Depo Sistemi
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true" class="login-content">
   
-  <div class="login-container">
+  <div class="login-wrapper">
     
+    <!-- Logo ve Hoş Geldiniz Alanı -->
     <div class="login-header">
-      <ion-icon name="cube-outline" color="primary"></ion-icon>
-      <h1>Giriş Yapın</h1>
-      <p>Depo yönetim sistemine hoş geldiniz</p>
+      <div class="logo-container">
+        <div class="logo-circle">
+          <ion-icon name="cube" class="logo-icon"></ion-icon>
+        </div>
+      </div>
+      <h1 class="welcome-title">Hoş Geldiniz</h1>
+      <p class="welcome-subtitle">Devam etmek için giriş yapın</p>
     </div>
 
-    <ion-card>
-      <ion-card-content>
+    <!-- Giriş Formu Kartı -->
+    <ion-card class="login-card">
+      <ion-card-content class="login-card-content">
         
-        <ion-item lines="full">
-          <ion-input 
-            label="Kullanıcı Adı" 
-            label-placement="floating"
+        <!-- Kullanıcı Adı -->
+        <div class="input-wrapper">
+          <ion-input
+            aria-label="Kullanıcı Adı"
+            fill="outline"
             [(ngModel)]="username" 
             type="text" 
-            placeholder="admin">
+            placeholder="Kullanıcı adınızı girin"
+            autocomplete="username"
+            class="modern-input">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
           </ion-input>
-        </ion-item>
+        </div>
 
-        <ion-item lines="full">
-          <ion-input 
-            label="Şifre" 
-            label-placement="floating"
+        <!-- Şifre -->
+        <div class="input-wrapper">
+          <ion-input
+            aria-label="Şifre"
+            fill="outline"
             [(ngModel)]="password" 
             type="password" 
-            placeholder="12345">
+            placeholder="Şifrenizi girin"
+            autocomplete="current-password"
+            class="modern-input">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
           </ion-input>
-        </ion-item>
-
-        <ion-button expand="block" (click)="onLogin()" class="login-button">
-          <ion-icon slot="start" name="log-in-outline"></ion-icon>
-          GİRİŞ YAP
-        </ion-button>
-
-        <div class="info-box">
-          <p><strong>Test Kullanıcıları:</strong></p>
-          <p>👨‍💼 admin / 12345</p>
-          <p>👤 user / 54321</p>
         </div>
+
+        <!-- Giriş Butonu -->
+        <ion-button 
+          expand="block" 
+          (click)="onLogin()"
+          class="login-button"
+          size="large">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Giriş Yap
+        </ion-button>
 
       </ion-card-content>
     </ion-card>
+
+    <!-- Test Kullanıcıları Bilgisi -->
+    <div class="info-note">
+      <ion-icon name="information-circle-outline" class="info-icon"></ion-icon>
+      <div class="info-text">
+        <p class="info-title">Test Kullanıcıları</p>
+        <div class="user-credentials">
+          <span class="credential-item">
+            <ion-icon name="shield-checkmark" color="primary"></ion-icon>
+            admin / 12345
+          </span>
+          <span class="credential-item">
+            <ion-icon name="person" color="primary"></ion-icon>
+            user / 54321
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="login-footer">
+      <p>© 2024 BAG Tech. Tüm hakları saklıdır.</p>
+    </div>
 
   </div>
 

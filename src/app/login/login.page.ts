@@ -42,10 +42,12 @@ export class LoginPage {
     }
   }
 
+  // Alert (Uyarı) gösterme fonksiyonu
   async showAlert(header: string, message: string) {
     const alert = await this.alertController.create({
       header: header,
       message: message,
+      cssClass: 'custom-alert', // <--- SİHİRLİ KOD BU!
       buttons: ['Tamam']
     });
     await alert.present();

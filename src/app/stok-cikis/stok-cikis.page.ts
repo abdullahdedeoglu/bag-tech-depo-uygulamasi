@@ -107,17 +107,51 @@ export class StokCikisPage implements OnInit {
     this.cikisLokasyonu = '';
   }
 
+  // // Toast (Bildirim) gösterme
+  // async showToast(message: string, color: string = 'primary') {
+  //   const toast = await this.toastController.create({
+  //     message: message,
+  //     duration: 3000,
+  //     position: 'top',
+  //     color: color,
+  //     buttons: [
+  //       {
+  //         text: 'Kapat',
+  //         role: 'cancel'
+  //       }
+  //     ]
+  //   });
+  //   await toast.present();
+  // }
+
   // Toast (Bildirim) gösterme
   async showToast(message: string, color: string = 'primary') {
+    
+    // Renge göre ikon ve stil belirle
+    let iconName = 'information-circle';
+    let cssClass = 'modern-toast';
+
+    if (color === 'danger') {
+      iconName = 'alert-circle';       // Hata ikonu
+      cssClass += ' toast-danger';     // Kırmızı çizgili stil
+    } else if (color === 'success') {
+      iconName = 'checkmark-circle';   // Başarı ikonu
+      cssClass += ' toast-success';    // Yeşil çizgili stil
+    }
+
     const toast = await this.toastController.create({
       message: message,
       duration: 3000,
       position: 'top',
-      color: color,
+      cssClass: cssClass, // <--- Özel stilimiz burada devreye giriyor
+      icon: iconName,     // <--- Mesajın başına ikon ekledik
       buttons: [
         {
-          text: 'Kapat',
-          role: 'cancel'
+          icon: 'close',  // "Kapat" yazısı yerine çarpı ikonu koyalım, daha şık
+          role: 'cancel',
+          handler: () => {
+            console.log('Toast kapatıldı');
+          }
         }
       ]
     });
@@ -129,10 +163,12 @@ export class StokCikisPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Çıkış Yap',
       message: 'Çıkış yapmak istediğinize emin misiniz?',
+      cssClass: 'custom-alert', // <--- EKLENDİ
       buttons: [
         {
           text: 'İptal',
-          role: 'cancel'
+          role: 'cancel',
+          cssClass: 'secondary'
         },
         {
           text: 'Çıkış Yap',

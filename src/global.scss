@@ -35,3 +35,118 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+// ============================================
+// GLOBAL CUSTOM ALERT TASARIMI
+// ============================================
+.custom-alert {
+  --backdrop-opacity: 0.4;
+  --background: #ffffff !important; // Arka plan kesinlikle beyaz
+
+  .alert-wrapper {
+    border-radius: 24px !important; // Yuvarlak köşeler
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2) !important;
+    background: #ffffff !important;
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    min-width: 300px;
+  }
+
+  // Başlık (Header)
+  .alert-head {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    
+    h2.alert-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b; // Koyu lacivert başlık
+      text-align: center;
+    }
+  }
+
+  // Mesaj İçeriği
+  .alert-message {
+    font-size: 15px;
+    color: #64748b; // Gri metin
+    text-align: center;
+    line-height: 1.5;
+    padding-bottom: 24px;
+  }
+
+  // Buton Grubu
+  .alert-button-group {
+    padding: 8px;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  // Genel Buton Stili
+  button.alert-button {
+    border-radius: 12px !important;
+    font-weight: 600;
+    text-transform: none; // Yazılar büyük harf olmasın
+    font-size: 15px;
+    height: 44px;
+    
+    .alert-button-inner {
+      justify-content: center;
+    }
+  }
+
+  // "Tamam" veya "Çıkış Yap" (Onay) Butonu
+  button.alert-button:not(.alert-button-role-cancel) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #ffffff !important; // Yazı beyaz
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+
+  // "İptal" Butonu
+  button.alert-button.alert-button-role-cancel {
+    background: #f1f5f9 !important;
+    color: #64748b !important;
+  }
+}
+
+// ============================================
+// MODERN TOAST (BİLDİRİM) TASARIMI
+// ============================================
+.modern-toast {
+  --background: #ffffff;       // Arka plan beyaz
+  --color: #334155;            // Yazı rengi koyu gri
+  --border-radius: 12px;       // Yuvarlak köşeler
+  --box-shadow: 0 8px 20px rgba(0,0,0,0.15); // Havalı gölge
+  --button-color: #94a3b8;     // "Kapat" butonu rengi
+  
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 20px; // En tepeden biraz aşağıda dursun
+
+  // Toast içindeki mesaj alanı
+  ::ng-deep .toast-message {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  // HATA (DANGER) DURUMU
+  &.toast-danger {
+    border-left: 6px solid #ef4444; // Sol tarafa kırmızı çizgi
+    
+    // İkon rengi
+    ion-icon {
+      color: #ef4444;
+      font-size: 20px;
+    }
+  }
+
+  // BAŞARI (SUCCESS) DURUMU
+  &.toast-success {
+    border-left: 6px solid #10b981; // Sol tarafa yeşil çizgi
+    
+    // İkon rengi
+    ion-icon {
+      color: #10b981;
+      font-size: 20px;
+    }
+  }
+}
